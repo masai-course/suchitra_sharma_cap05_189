@@ -1,0 +1,19 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+
+}
+.avatar{
+  border-radius: 50%;
+  width: 250px;
+  border-color:solid 2px red;
+}
+h2{
+    color:red;
+    font-weight: bolder;
+}
+button{
+      background-color: red;
+      padding: 1rem;
+      font-weight:900
+}
