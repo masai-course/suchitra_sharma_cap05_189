@@ -1,94 +1,102 @@
-# Code-submission - Masai School Coding Assignments
+## React-Routing-Products List
 
+#### Problem Statement
 
+Create the following application: Products Page using the boilerplate code provided in the zip file
 
-## What is `Masai-course` repo?
-
-- **Masai will provide you repo with folder template along with maintain access, so that you will be able to push your daily assignments**.
-
-## Steps to clone `masai-course` repo
-
-
--  **Visit [https://github.com/](https://github.com/) and click on masai-repo**
-
-<img width="450" alt="Screenshot 2022-06-10 at 3 12 26 PM" src="https://user-images.githubusercontent.com/63995316/173038757-a2295ee0-872c-47cb-8ace-68dd7c1016b4.png">
-
-
-
-- **To clone on to your local system copy HTTP address.**
-
-![](https://i.imgur.com/crLGnXE.png)
-
-
-- **Open any drive or folder with VS code and clone this repo**
+## Maximum Marks - 15
 
 ```
-git clone <https address>
+✅ able to submit - (default) 1 mark
+✅ Should render the homepage by default - 1 mark
+✅ Should navigate the user to the Products page, when clicked on the 'View all Products' button - 1 mark
+✅ Should fetch and render the products using the ProductCard component - 2 marks
+✅ Should render, image, title, price inside the ProductCard component - 2 marks
+✅ Should navigate the user to SingleProduct page, when clicked on 'More Details' button - 2 marks
+✅ Should fetch the product details, using the productId variable from the URL - 2 marks
+✅ Should show the details of title, image, price, category and description on the SingleProduct page - 2 marks
+✅ Should show the 404 page not found, when visiting and un-listed route - 2 marks
 ```
 
-![](https://i.imgur.com/AexaZv7.png)
+### Note : submitting just boilerplate code will give you testfailed error
 
+## Installation
 
-- **You can see folder with your repo name.**
-<p >
-<img width="323" alt="Screenshot 2022-06-09 at 12 14 42 PM" src="https://user-images.githubusercontent.com/63995316/173042002-36f552df-06a5-4758-bd19-cc001bf251a1.png">
+- Use node version(LTS) should be `v16.16.0`
+- Don't change/override package.json
+- please make sure you do not push package-lock.json
 
+```
+// install node_modules
+npm install --engine-strict
 
-</p>
+// run locally
+npm run start
 
+//to start the json-server
+npm run server
 
-
-
-
-- **Move to that repo folder by changing your directory.**
-
-```jsx
-cd Cherry_fw_13_0001/
 ```
 
-- **As you see there are different folder with unit names mentioned.**
-- **You need to push your code into these folders, suppose you are in unit-2 sprint-2 day-2, go into** `unit-2 → sprint-2 → day-2 → assignments`
+##### NOTE:
 
-<p align="center">
-<img height="450" center width="450" alt="Screenshot 2022-06-10 at 3 12 26 PM" src="https://i.imgur.com/dzNPep6.png">
+1. Make sure that the json-server is up and running at port 8080
+2. Create a .env file. Include `REACT_APP_JSON_SERVER_PORT=8080` in it
+3. You need to restart the react server once the env file is updated
+4. Use `http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}` as the json-server url
 
-</p>
+### Testing Objectives
 
+- Ability to set up Routing functionality, using react-router-dom
+- Ability to fetch data, and show it on the UI
+- Ability to manage/work with the fetched data
 
+### Understanding Component Structure
 
-- **Create your assignment files in that folder, if it is template based assignment/ evaluation, extract in that folder directly.**
-- **After creating files, sync your files to repo**
-    
-    ```jsx
-    git add .
-    
-    git commit -m "push message"
-    
-    git push origin master
-    ```
-    <img height="200"  alt="Screenshot 2022-06-10 at 3 12 26 PM" src="https://i.imgur.com/eueUSSl.png">
+- App
+  - MainRoutes
+    - Path: “/”, Page: Homepage
+    - Path: “/products, Page: Products
+    - Path: “/products/:productId", Page: SingleProduct
+    - Render the PageNotFound page, for all other routes
+      Use the ProductCard component to render the Products inside the Products page
 
+### JSON Data:
 
+- db.json file is included in the boilerplate zip file, with the initial watches data. **Do not overwrite/modify this data**
 
+### Features to build:
 
+1. Homepage:
 
-- **Go to your repository and check for changes**
+- Link/Navigate the user to the Product page, when they click on the 'View all Products' button
 
-![](https://i.imgur.com/N4gj8BW.png)
+![](https://i.imgur.com/ypiG68W.png)
 
-## Video Demo 
+2. Products page:
 
+- Fetch all the products data from the json-server, and render the data in the UI using the ProductCard component
+- The product card component should contain the title, image and price
+- The user should be navigate to the SingleProduct page, when clicked on the 'More details' button in the ProductCard component
 
+![](https://i.imgur.com/pHYl0cJ.png)
 
-https://user-images.githubusercontent.com/63995316/174576908-cf9bae00-1aa7-4052-ae3d-f52ad036aef0.mp4
+3. SingleProduct:
 
+- Fetch the details of the product, based on the productId received from the URL
+- Render all the details, of title, image, price, category and description on the page
+  ![](https://i.imgur.com/zBZc2bB.png)
 
+4. Should show the 404 page when visiting any unlisted path.
+   ![](https://i.imgur.com/Xz25P57.png)
 
-## Do’s and Dont’s
+### General Instructions:
 
-- **Clone this repo on to your local system.**
-- **Push your daily assignments/evaluations into this repo**.
-    - **for example, if you are in unit-2 sprint-1 day-1 , go to `unit-2 → sprint-1 → day-1` and push your assignments**.
-- **Your repo should be `private`, don’t change it to `public,`Masai team can access your repo even if it is private**.
-- **For the entire masai journey, you should push all your assignments into this repo, you should not push to  seperate personal repo, untill and unless masai team asked to do so**.
-- **Don’t share your repo link with any students, doing so will lead to termination**
+- Do not remove `data-testid=’xxx’` from anywhere inside the code. They are the test inputs, removing them, may lead to low scores.
+- Do not change the current folder structure, and names of components provided.
+- Only use the data present in the db.json file, and do not modify the data in the json file.
+
+### General guidelines
+
+- The system on cp.masaischool.com may take between 1-20 minutes for responding
+- So we request you to read the problem carefully and debug before itself.
