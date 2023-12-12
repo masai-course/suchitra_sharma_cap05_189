@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Account Management</title>
+</head>
+<body>
+    <h1>Hello</h1>
+    <script>
+        function BankAccount(accountNumber, name, type, balance){
+          
+            this.accountNumber=accountNumber,
+          this.name=name,
+          this.type=type,
+          this.balance=balance
+
+          this.deposit=function(){
+               console.log("amount deposited")
+          }
+
+          this.withdraw=function(){
+            if(this.balance>=10){
+                console.log("Amount withdraw")
+            }
+            else{
+                console.log("Insufficient balance")
+            }
+          }
+
+          this.checkBalance= function(){
+            console.log(this.balance)
+          }
+
+          this.isActive=function(){
+            if(this.balance>0){
+                console.log("Account is active")
+            }
+            else{
+                console.log("Account is not active")
+            }
+          }
+
+        }
+        // console.log("hello")
+
+        var personAccount= new BankAccount(
+            "88209877953",
+            "Person 1",
+            "Savings",
+            "90000"
+           
+        )
+
+        var personAccount2= new BankAccount(
+            "9874210313",
+            "Person 2",
+            "Saving",
+            "5"
+           
+        )
+
+        var personAccount3= new BankAccount(
+            "7037747458420",
+            "Person 3",
+            "Savings",
+            "100000"
+           
+        )
+
+        console.log(personAccount)
+        personAccount.deposit()
+        personAccount.withdraw()
+        personAccount.checkBalance()
+        personAccount.isActive()
+
+        console.log(personAccount2)
+        personAccount2.deposit()
+        personAccount2.withdraw()
+        personAccount2.checkBalance()
+        personAccount2.isActive()
+
+        console.log(personAccount3)
+        personAccount3.deposit()
+        personAccount3.withdraw()
+        personAccount3.checkBalance()
+        personAccount3.isActive()
+
+        
+       
+    </script>
+</body>
+</html>
