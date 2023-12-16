@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulation Game</title>
+</head>
+<body>
+    <script>
+
+    // function Vehicle(brand, model, speed, fuelType){
+    //           this.brand=brand,
+    //             this.model=model,
+    //             this.speed=speed,
+    //             this.fuelType=fuelType
+
+
+    //     Vehicle.accelerate=function(){
+    //     this.speed=this.speed +100
+    //     console.log(this.speed)
+       
+    // }
+
+            
+    // }        
+
+   
+     
+    // let car=new Vehicle("Thar lx", "A6", "80kmh", "Automatic")
+    // console.log(car)
+    // Vehicle.accelerate()
+    // console.log("Accelerate speed is"+" "+ this.speed)
+// console.log(Vehicle.accelerate())
+// Vehicle.accelerate()
+
+ function Vehicle(brand, model, speed, fuelType){
+             
+            //     let obj={}
+            //     Object.setPrototypeOf( obj,Vehicle.prototype)
+            //    thisbrand=brand
+            //     obj.model=model
+            //     obj.speed=speed
+            //     obj.fuelType=fuelType
+            //     return obj()
+                this.brand=brand,
+                this.model=model,
+                this.speed=speed,
+                this.fuelType=fuelType
+
+      }
+//  console.log(obj)
+
+Vehicle.prototype.accelerator=function(){
+        this.speed=this.speed +100
+        console.log(`Accelerate speed is ${this.speed}`)
+       
+    }
+
+Vehicle.prototype.brake=function(){
+        this.speed=this.speed -100
+        console.log(`Brake speed is ${this.speed}`)
+       
+    }
+
+    Vehicle.prototype.refuel=function(){
+       
+        console.log("Vehicle is refuelling")
+       
+    }
+
+let car= new Vehicle("Thar lx", "A6", 80 , "Automatic", )
+
+car.numberOfWheels=4
+car.honk=function(){
+    console.log("honking sound")
+}
+
+let Airplane= new Vehicle("Airspeed Envoy","ATR 42", 4000, "Automatic" )
+
+Airplane.numberOfEngine=8
+Airplane.hasLandingGear=4
+
+Airplane.takeOff=function(){
+    console.log("Airplane is taking off")
+}
+
+console.log(car)
+car.accelerator()
+car.brake()
+car.refuel()
+car.honk()
+console.log(Airplane)
+Airplane.takeOff()
+console.log(Vehicle.prototype)
+
+
+
+    </script>
+</body>
+</html>
