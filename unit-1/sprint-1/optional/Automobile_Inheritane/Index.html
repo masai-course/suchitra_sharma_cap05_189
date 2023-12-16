@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automobile Inheritance</title>
+</head>
+<body>
+    <script>
+       
+    function Automobile(carName, color, price ){
+        this.carName=carName,
+        this.color=color,
+        this.price=price
+    }
+    
+     let Automobile1= new Automobile(
+        "Lamborghini",
+       "orange",
+       "8.9cr"
+    )
+      
+let Automobile2=Object.create(Automobile1)
+
+   
+Automobile2.fuel="full type"
+
+let Automobile3=Object.create(Automobile2)
+
+Automobile3.transmission="Automatic"
+ 
+let Automobile4=Object.create(Automobile3)
+
+Automobile4.MaxPower="1001.11php"
+ console.log(Automobile1, Automobile2, Automobile3, Automobile4)
+  
+
+    </script>
+</body>
+</html>
