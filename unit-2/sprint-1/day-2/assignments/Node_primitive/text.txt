@@ -1,0 +1,2 @@
+const {isNumber,isStr,isArray,isObj}= require("./index.js")
+return(isObj())
