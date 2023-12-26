@@ -1,0 +1,9 @@
+#stopwatchShow{
+    color:red;
+    text-align: center;
+    border: 2px solid black;
+    width: 500px;
+    height: 100px;
+    background-color: azure;
+    margin-left: 200px;
+}

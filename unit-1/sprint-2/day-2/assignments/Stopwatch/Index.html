@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <link rel="stylesheet" href="index.css">
+  
+</head>
+<body>
+      <h1 style="font: 200px; text-align: center;color: blueviolet;">Stopwatch</h1>
+    <div id="stopwatchShow">
+        <h3 id="displayTime">00:00:00</h3>
+        <button style="background-color: bisque;"   onclick=timerStart()>Start </button>
+        <button style="background-color:bisque;" onclick= timerStop()>Pause</button>
+        <button style="background-color:bisque" onclick=timerReset()>Reset</button>
+    
+        </div>
+        
+ <script>
+    let [hour, minute, second]= [0,0,0]
+    let timer=null
+    let displayTime=document.getElementById("displayTime")
+    // console.log(hour , minute, second)
+
+    function startBtn(){
+        second++
+        // console.log("hi")
+        if(second==60){
+            second=60
+        minute++
+        // console.log(minute)/
+
+        if(minute==60){
+            minute=0;
+            hour++
+        }
+       }
+
+       let h=hour<10? "0"+ hour :hour;
+       let m=minute<10? "0"+ minute:minute;
+       let s=hour<10? "0"+ second : second;
+
+         displayTime.innerHTML=h+":"+m+":"+s
+
+        
+    }
+
+    // startBtn()
+
+    function timerStart(){
+        if(timer!==null){
+            clearInterval(timer)
+        }
+
+       timer= setInterval(startBtn, 1000)
+        // console.log("hiii")
+    }
+     
+    function timerStop(){
+        clearInterval(timer)
+        // console.log("time stop")
+    }
+
+    function timerReset(){
+        clearInterval(timer)
+       let  [hour, minute, second]= [0,0,0]
+        displayTime.innerHTML="00:00:00"
+        // console.log("time reset")
+
+    }
+
+ </script>
+
+        
+         
+</body>
+</html>
