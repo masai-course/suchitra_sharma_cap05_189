@@ -1,0 +1,59 @@
+#timerContainer{
+    width: 70%;
+    height: 250px;
+    border: 2px solid black;
+    margin: auto;
+    background-color: blanchedalmond;
+}
+
+h1{
+    text-align: center;
+    color: blue;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#inputContainer{
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction:row;
+    /* flex-basis: 33.333%; */
+    /* flex-wrap: wrap; */
+    /* text-align: center; */
+    align-items: center;
+    padding-right: 30px;
+}
+
+#hour, #minute, #second{
+        height: 30px;
+        font-size: 20px;
+        border: 2px solid black;
+        background-color: aliceblue;
+        margin-right: 4px;
+        margin-left: 20px;
+}
+
+button:hover{
+    color:black;
+    background-color:red;
+    
+}
+
+button{
+    margin-right: 5px;
+    width: 65px;
+    border-color: 2px solid red;
+    font-weight: bold;
+    height: 30px;
+    padding-right: 10px;
+
+
+
+}
+
+p{
+    font-size: 30px;
+    font-weight: bold;
+    margin-right: 4px;
+    color:blue;
+}
