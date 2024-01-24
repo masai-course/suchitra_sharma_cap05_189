@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Methods</title>
+</head>
+<body>
+  <h1>Object Method</h1>
+    
+</body>
+<script>
+//    console.log("hello") 
+let students=[
+    student1={
+       subject:["english", "Hindi", "Math"],
+        marks:[55, 85, 70],
+    },
+    student2={
+        subject:["english", "Hindi", "Math"],
+        marks:[35, 65, 70],
+    },
+    student3={
+        subject:["english", "Hindi", "Math"],
+        marks:[75, 95, 40],
+    }
+    
+
+]
+
+// console.log(students[0])
+
+// let max=-100000;
+// let min=100000;
+let minimum=Number.MAX_VALUE;
+let maximum=Number.MIN_VALUE;
+    
+
+for(let i=0; i<students.length; i++)
+{
+    let student=students[i]
+    let totalMarks=0
+    // let maximum= Integer.MAX_VALUE
+    // let minimum=Integer.MAX_VALUE;
+    // let maximum=Integer.MIN_VALUE;
+   
+    for(let j=0; j<student.marks.length; j++)
+    {
+       totalMarks+=student.marks[j]
+    }
+    
+   if(totalMarks>maximum)
+   {
+        maximum=totalMarks
+   }
+ if(totalMarks<minimum)
+   {
+        minimum=totalMarks
+   }
+   
+}
+
+// console.log(sum)
+console.log(`maximum value is ${maximum} && minimum value is ${minimum}`)
+
+
+</script>
+</html>
