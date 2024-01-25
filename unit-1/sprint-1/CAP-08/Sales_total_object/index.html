@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Total</title>
+</head>
+<body>
+    <h1>Sales Total</h1>
+
+    <script>
+
+// SAMPLE INPUT :
+
+var salesArr = [
+  { item: 'PS4 Pro', stock: 3, original: 399.99 },
+  { item: 'Xbox One X', stock: 1, original: 499.99, discount: 0.1 },
+  { item: 'Nintendo Switch', stock: 4, original: 299.99 },
+  { item: 'PS2 Console', stock: 1, original: 299.99, discount: 0.8 },
+  { item: 'Nintendo 64', stock: 2, original: 199.99, discount: 0.65 }
+];
+
+function calculateSalesTotal(){
+        
+        for(let i=0; i<salesArr.length; i++)
+        {
+           let result=salesArr[i]
+           {
+           
+            if(result.discount==undefined){
+             result.sales=result.original
+            result.total=result.sales*result.stock
+
+            }
+            else{
+
+                result.sales=(result.original)-(result.original*result.discount)
+               result.total= result.sales*result.stock
+
+            }
+            
+            console.log(result)
+          
+        }
+           
+        }
+       
+        
+}
+
+    calculateSalesTotal()
+
+
+    </script>
+    
+</body>
+</html>
