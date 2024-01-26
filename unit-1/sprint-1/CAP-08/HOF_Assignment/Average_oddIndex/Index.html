@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Average Of Odd Index</title>
+</head>
+<body>
+    <h1>Average of Odd Index</h1>
+
+    <script>
+// Problem 1: Find the average of elements present at odd index of the following array.
+
+let arr = [10, 24, 56, 72, -10, -88, 100, 564];
+// let arr=[1,2,3,4,5]
+let count=0
+let sum=0
+let average=arr.forEach(function(ele, i){
+   
+    if(i%2!=0)
+    {
+        // console.log(ele)
+        sum+=ele
+     count++
+    }
+
+})
+console.log(sum/count)
+
+    
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
