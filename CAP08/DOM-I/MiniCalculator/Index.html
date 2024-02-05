@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Calculator</title>
+</head>
+<body>
+    <input id="firstNum" type="number" placeholder="enter 1st Number">
+    <input id="secondNum" type="number" placeholder="enter 2nd Number">
+
+    <button onclick="addBtn()">Add</button>
+    <button onclick="subBtn()">Subtraction</button>
+    <button onclick="productBtn()">Multiplication</button>
+    <button onclick="divisionBtn()">Division</button>
+
+    
+</body>
+<script>
+    let firstInputNum=document.getElementById("firstNum")
+    let secondInputNum=document.getElementById("secondNum")
+
+
+ 
+    function addBtn(){
+        let sum=0
+      let num1=parseInt(firstInputNum.value)
+        let num2=parseInt(secondInputNum.value)
+
+        sum+=num1+num2
+
+        alert(sum)
+   
+    
+       
+    }
+
+    let sub=0
+
+    function subBtn(){
+     sub=firstInputNum.value-secondInputNum.value
+    
+        alert(sub)
+    }
+
+    let product=1
+    function productBtn(){
+     product=firstInputNum.value*secondInputNum.value
+    
+        alert(product)
+    }
+
+    let division=1
+
+    function divisionBtn(){
+     division=firstInputNum.value/secondInputNum.value
+    
+        alert(division)
+    }
+    
+</script>
+</html>
