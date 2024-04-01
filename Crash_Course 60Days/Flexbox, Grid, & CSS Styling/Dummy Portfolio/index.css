@@ -1,0 +1,9 @@
+@media all and (min-width:451) and (max-width:760){
+    body{
+        background-color: red;
+    }
+    #header{
+        background-color: green;
+    }
+
+}
