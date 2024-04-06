@@ -1,0 +1,196 @@
+#parent{
+    width: 100%;
+    /* border: 1px solid black; */
+    background-color: aliceblue;
+
+
+}
+
+.header-section{
+    width: 100%;
+    /* border:1px solid red; */
+    display: flex;
+    height: 25px;
+    /* flex-direction: row; */
+    justify-content: flex-end;
+    gap: 20px;
+}
+.header-section>div{
+    /* margin-top: 4px; */
+    /* border: 1px solid black; */
+    padding-top: 4px;
+
+
+}
+.header-section>img{
+    margin-top: 4px;
+    margin-right: 3px;
+}
+.navbar-section{
+    /* border: 1px solid green; */
+    display: flex;
+    width: 100%;
+    height: 40px;
+    background-color: black;
+    
+    
+}
+p{
+    font: 10x;
+    
+
+}
+input{
+    width: 700px;
+    height: 25px;
+    border-radius: 20px;
+    margin-top: 5px;
+}
+.searchDiv{
+   font-size: 20px;
+    border: 1px solid black;
+    margin-top: 1px;
+    width: 90px;
+
+}
+
+#logo{
+    border: 1px solid black;
+    width: 70px;
+    /* color: white; */
+    
+
+}
+#logo>p{
+    font-size: 30px;
+    margin-top: 3px;
+    font-weight: bold;
+    margin-left: 4px;
+    color: white;
+    padding-bottom: 4px;
+    
+    
+}
+.searchDiv>p{
+    margin-top: 2px;
+    font-weight: bold;
+    margin-left: 6px;
+    color: white;
+    border: 1px solid white;
+    height: 30px;
+    padding-top: 4px;
+    
+    
+}
+.icons{
+    /* border: 1px solid black; */
+    width: 80px;
+}
+
+.navbar2-sec{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-around;
+    background-color: red;
+
+}
+.selectTag{
+    border: 1px solid black;
+}
+/* .selectTag>p{
+    width: 300px;
+} */
+.image-section{
+    width: 600px;
+    padding-right: 200px;
+    margin-right: 200px;
+}
+
+#img-sec{
+    width: 1250px;
+}
+#brand-div{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-around;
+    height:70px;
+    background-color:lightgoldenrodyellow
+}
+.promotionalQuotes{
+    /* border: 1px solid black; */
+    /* padding-top: 40px; */
+    padding-bottom: 10px;   
+    background-color:pink ; 
+}
+.promotionalQuotes>p{
+    margin-top: 4px;
+   
+    
+}
+.promotionalQuotes>h3{
+    margin-left: 25px;
+}
+.brand-para{
+    /* border: 1px solid black; */
+    height: 30px;
+    margin-top: 6px;
+}
+.app-section{
+    /* border: 1px solid black; */
+    gap: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: beige;
+}
+.logo-image{
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+    gap: 15px;
+    margin-left: 10px;
+}
+.footer-section{
+    /* border: 1px solid black; */
+    height: 350px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color:lightgray
+
+
+    
+
+     /* grid-template-columns: repeat (4, 1fr); */
+}
+.info-sec{
+    /* border: 1px solid green; */
+    display: grid;
+    width: 400px;
+    /* margin-left: 10px; */
+
+}
+.info-sec>p{
+    gap: 2px;
+    margin-left: 20px;
+}
+.login-image{
+    width: 30px;
+    margin-left: 18px;
+    margin-top: 4px;
+}
+.favrt-icon{
+    width: 30px;
+    margin-left: 18px;
+    margin-top: 4px;
+    background-color: white;
+
+}
+.bag-icon{
+    width: 30px;
+    margin-left: 18px;
+    margin-top: 4px;
+}
+.selectTag{
+    margin-left: 18px;
+    padding-left: 18px;
+}
