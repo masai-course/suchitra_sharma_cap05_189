@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Calculator</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <div id="main-container">
+        <h3>Mini Calculator</h3>
+        <div id="input-container">
+            <input id="input1" type="text" placeholder="first number">
+            <input  id="input2" type="text" placeholder="second number">
+
+        </div>
+
+   
+    <div id="btn-container">
+        <button class="btn" onclick="sum()" >Add</button>
+        <button class="btn" onclick="sub()" >Subtract</button>
+        <button class="btn" onclick="multi()">Multiply</button>
+        <button class="btn" onclick="divide()">Division</button>
+
+    </div>
+
+    </div>
+    
+    
+    <script>
+        let input1=document.getElementById("input1")
+        let input2=document.getElementById("input2")
+        // let button=document.getElementsByClassName(".btn")
+
+
+        // let num1=parseFloat(input1.value)
+        // let num2=parseFloat(input2.value)
+
+        
+
+        function sum(){
+            let add=0
+            let num1=parseInt(input1.value)
+        let num2=parseInt(input2.value)
+        add+=num1+num2
+           alert(add)
+
+           console.log(num1+num2)
+        }
+
+       function sub(){
+           let subtract=0;
+
+        subtract=input1.value-input2.value
+
+        alert(subtract)
+
+       }
+        
+
+        function multi(num1, num2){
+            let product=1
+          product=input1.value*input2.value
+
+          alert(product)
+        }
+        
+        function divide(num1, num2){
+
+            let division=1
+            division=input1.value/input2.value
+            alert(division)
+        }
+
+
+    </script>
+</body>
+</html>
