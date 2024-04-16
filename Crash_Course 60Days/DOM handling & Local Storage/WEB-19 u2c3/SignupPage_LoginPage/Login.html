@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="Login.css">
+</head>
+<body>
+    <div id="main-container">
+        <input id="email" type="email" placeholder="Enter registered email">
+        <input id="password" type="password" placeholder="password">
+        <input id="submit" type="submit" value="Login">
+
+    </div>
+</body>
+
+    <script>
+        let submit=document.getElementById("submit")
+        console.log("submit")
+
+        submit.addEventListener("click", function(){
+            // alert("click")
+
+                console.log(userArr)
+            let newArr=userArr.filter(function(ele, i){
+
+         return (ele.email==email.value && ele.password==password.value)
+            })
+                if(newArr.length>0)
+                {
+                    alert("You are Logged in")
+                    window.location.href="index.html"
+                }
+                else{
+                    alert("Wrong credential")
+                }
+
+           
+        })
+
+
+        function LoadData(){
+
+            let savedUserData=JSON.parse(localStorage.getItem("userArr"))
+            console.log(savedUserData)
+            if(savedUserData){
+                userArr=savedUserData
+            }
+        }
+
+        LoadData()
+    </script>
+</html>

@@ -1,0 +1,63 @@
+/* Fill CSS here */
+
+div{
+    width: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    gap:20px
+}
+
+form{
+    width: 30%;
+    /* border: 1px solid red; */
+    background-color: azure;
+
+}
+
+table{
+    width: 70%;
+    /* border:1px solid green; */
+    /* height: 80%; */
+    /* height: 800px; */
+    background-color: thistle;
+}
+
+label{
+    font-size: 20px;
+    font-weight: bold;
+    color:darkred
+}
+input, select{
+    width: 300px;
+    height: 30px;
+    border: 2px solid darkcyan;
+    border-radius: 10px;
+    background-color:beige
+}
+
+th{
+    font-weight: bold;
+    color: black;
+    background-color: aqua;
+}
+h1{
+    text-align: center;
+    color: brown;
+    font-weight: bold;
+    background-color: blanchedalmond;
+}
+#submit{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    width: 300px;
+    margin-top: 3px;
+    color: blue;
+}
+
+tbody{
+    border: 1px solid black;
+    text-align: center;
+    margin-top: 3px;
+    margin: auto;
+}

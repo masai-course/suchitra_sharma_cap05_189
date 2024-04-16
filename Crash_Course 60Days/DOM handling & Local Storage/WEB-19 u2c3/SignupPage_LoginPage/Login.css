@@ -1,0 +1,28 @@
+#main-container{
+    width:50%;
+    margin: auto;
+    /* border: 1px solid black; */
+    display: grid;
+    margin-top: 200px;
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+    /* box-shadow: rgba(50, 93, 52, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+}
+
+#main-container>input{
+    height: 60px;
+    text-align: center;
+    /* background-color: bisque; */
+    border: 2px solid darkmagenta;
+    border-radius: 20px;
+}
+
+#submit{
+    font-size: 25px;
+    font-weight: bold;
+    color: red;
+    background-color: lightpink;
+}
+
+body{
+    background-color: azure;
+}

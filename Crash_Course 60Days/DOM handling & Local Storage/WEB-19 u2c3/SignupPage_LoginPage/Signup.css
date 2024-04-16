@@ -1,0 +1,36 @@
+#main-container{
+    width: 50%;
+    display: grid;
+    /* border: 1px solid red; */
+    margin: auto;
+    margin-top: 150px;
+    column-gap: 2px;
+    row-gap: 3px;
+}
+
+#main-container>input{
+    height: 35px;
+    border-radius: 10px;
+    border-color: lightcoral;
+    background-color:lightgray;
+    text-align: center;
+    
+}
+
+#selectDep{
+    height: 35px;
+    border-radius: 10px;
+    /* border-color: lightcoral; */
+    background-color:lightgray;
+    border: 2px solid lightcoral;
+    text-align: center;
+}
+
+#submit{
+    font-size: 20px;
+    font-weight: bold;
+    color: darkgoldenrod;
+}
+body{
+    background-color: blanchedalmond;
+}

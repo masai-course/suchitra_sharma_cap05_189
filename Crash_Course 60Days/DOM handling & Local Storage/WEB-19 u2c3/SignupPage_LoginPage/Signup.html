@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <link rel="stylesheet" href="Signup.css">
+</head>
+<body>
+    <div id="main-container">
+        <input id="name" type="text" placeholder="Enter your name">
+        <input id="email" type="email" placeholder="Enter your Email">
+        <select name="" id="selectDep">
+            <option value="" id="department">Select Department</option>
+            <option value="" id="HR">HR</option>
+            <option value="" id="Employee">Employee</option>
+        </select>
+        <input  id="password" type="text" placeholder="Password">
+        <input id="Confirm_password" type="password" placeholder="Confirm_password">
+        <input id="submit" type="submit" value="Signup">
+    </div>
+    
+</body>
+    <script>
+
+        let submit=document.getElementById("submit")
+        let userArr=[]
+        submit.addEventListener("click", function(){
+
+            // console.log("click")
+            let name=document.getElementById("name").value
+            let email=document.getElementById("email").value
+            let HR=document.getElementById("HR").value
+            let Employee=document.getElementById("Employee").value
+            let password=document.getElementById("password").value
+            let Confirm_password=document.getElementById("Confirm_password").value
+
+            if(password===Confirm_password)
+            {
+                let obj={
+                    name:name,
+                    email:email,
+                    HR:HR,
+                    Employee:Employee,
+                    password:password
+                }
+                userArr.push(obj)
+                console.log(userArr)
+                localStorage.setItem("userArr", JSON.stringify(userArr))
+                alert("Registration Successfull")
+                
+                window.location.href="Login.html"
+            }
+            else{
+                alert("Password is not matching")
+            }
+
+        })
+
+
+        function LoadData(){
+
+            let savedUserData=JSON.parse(localStorage.getItem("userArr"))
+            console.log(savedUserData)
+
+            if(savedUserData){
+                userArr=savedUserData
+            }
+
+            // console.log(userData)
+        }
+
+        LoadData()
+
+
+    </script>
+</html>
