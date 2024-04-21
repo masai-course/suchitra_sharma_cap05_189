@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Stopwatch</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="main-container">
+        <h2>STOPWATCH</h2>
+        <h3 id="timerDisplay">00:00:00</h3>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+        <button id="reset">Reset</button>
+        
+    </div>
+   
+    
+</body>
+
+    <script>
+
+let start=document.getElementById("start")
+let stop=document.getElementById("stop")
+let reset=document.getElementById("reset")
+let timerDisplay=document.getElementById("timerDisplay")
+
+
+
+let timerId=null
+
+let hr=0;
+let min=0;
+let sec=0;
+
+start.addEventListener('click', function(){
+    if(timerId!==null){
+        clearInterval(timerId)
+    }
+
+   timerId= setInterval(startTimer, 1000)
+
+//    console.log("start button click")
+})
+
+stop.addEventListener('click', function(){
+    clearInterval(timerId)
+
+    // console.log("stop button click")
+})
+
+reset.addEventListener('click', function(){
+    clearInterval(timerId)
+    timerDisplay.innerHTML="00:00:00"
+    secStr=minStr=hrStr=0
+
+    // console.log("reset button click")
+})
+
+
+
+function startTimer(){
+    sec++
+    if(sec==10){
+        sec=0;
+        min++
+        if(min==10)
+    {
+        min=0;
+        hr++
+    }
+    }
+   
+   
+    let secStr= sec<10?`0${sec}`:sec;
+    let minStr= min<10?`0${min}`:min;
+    let hrStr= hr<10?`0${hr}`:hr;
+
+    timerDisplay.innerHTML=`${hrStr}:${minStr}:${secStr}`
+
+    console.log(timerDisplay)
+
+console.log("click")
+
+}
+       
+
+    </script>
+</html>
