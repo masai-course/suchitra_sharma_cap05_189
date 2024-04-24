@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: beige;
+        }
+        h4{
+            text-align: left;
+            /* border: 1px solid black; */
+            width: 50%;
+            height: 30px;
+            padding-top: 10px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+        }
+        h3{
+            
+            font-size: 25px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            height: 30px;
+            /* border: 3px solid red; */
+            width: 30%;
+            margin: auto;
+            text-align: center;
+        }
+        #cardDiv{
+            display: flex;
+            /* grid-template-columns: 1(repeat, 1fr); */
+            /* border: 1px solid green; */
+            gap: 20px;
+        }
+        input{
+            width: 25px;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div id="mainContainer">
+        <h3>Fetch Todos</h3>
+        
+
+    </div>
+    
+</body>
+<script>
+
+let container=document.getElementById("mainContainer")
+let inputBox=document.getElementById("input")
+
+function getData(){
+    fetch("https://jsonplaceholder.typicode.com/todos")
+    .then(function(res){
+        res=res.json()
+        return res
+        console.log("first", res)
+
+    })
+    .then(function (res){
+        console.log(res)
+        showData(res)
+
+    })
+
+}
+
+getData()
+
+function showData(arr){
+    arr.forEach((ele, i)=>{
+        let card=document.createElement("div")
+        card.id="cardDiv"
+        
+
+        let title=document.createElement("h4")
+        title.innerText=ele.title
+        // inputBox.innerHTMLi.inputBox
+
+        let check=document.createElement("input")
+        check.type="checkbox"
+
+        card.append(title, check)
+        container.append(card)
+
+    })
+    
+
+    
+
+}
+    
+</script>
+</html>
