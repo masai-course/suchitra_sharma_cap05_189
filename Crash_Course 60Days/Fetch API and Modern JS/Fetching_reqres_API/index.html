@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <button onclick="fetchUserData()">Fetch User</button>
+    <div id="mainContainer">
+        
+        
+
+    </div>
+    
+</body>
+<script>
+
+    let mainDiv=document.getElementById("mainContainer")
+
+    function getData(){
+        fetch("https://reqres.in/api/users")
+        .then(function(res){
+            return res.json()
+
+        })
+        .then(function(res){
+            console.log(res)
+            showData(res)
+        })
+    }
+
+    
+
+
+    function showData(arr){
+        // console.log(arr.data)
+        let arrData=arr.data
+        console.log(arrData)
+        arrData.forEach((ele, i)=>{
+
+            let container=document.createElement("div")
+            container.id="userCont"
+
+            let paraDiv=document.createElement("div")
+
+            let firstName=document.createElement("p")
+            firstName.innerText=ele.first_name
+
+            let lastName=document.createElement("p")
+            lastName.innerText=ele.last_name
+
+            paraDiv.append(firstName, lastName)
+            paraDiv.id="userPara"
+
+            let Avatar=document.createElement("img")
+            Avatar.src=ele.avatar
+
+            let email=document.createElement("span")
+            email.innerHTML=ele.email
+
+            container.append(Avatar, paraDiv, email)
+            mainDiv.append(container)
+        })
+
+    }
+
+
+    function fetchUserData(){
+        getData()
+
+        
+
+    }
+
+</script>
+</html>

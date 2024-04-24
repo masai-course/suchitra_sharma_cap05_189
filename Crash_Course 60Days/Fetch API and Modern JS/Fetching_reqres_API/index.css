@@ -1,0 +1,60 @@
+#mainContainer{
+    /* border: 1px solid red; */
+    display: grid;
+    grid-template-columns:repeat(3, 1fr);
+    /* justify-content: center; */
+    gap: 20px;
+    /* box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
+    /* height: 600px; */
+background-color:lightgoldenrodyellow
+}
+
+#userCont{
+    /* border: 1px solid black; */
+    gap: 20px;
+    text-align: center;
+    width: 300px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    background-color: antiquewhite;
+    /* height: 250px; */
+
+}
+
+#userPara{
+    /* border: 1px solid green; */
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    height: 30px;
+    /* padding-top:10px; */
+    font-weight: bold;
+    /* margin: auto; */
+    padding-bottom: 20px;
+    color: brown;
+    
+   
+}
+
+span{
+    font-weight: bold;
+    color: blue;
+    font-style: italic;
+}
+img{
+    width: 100%;
+    height: 200px;
+}
+
+button{
+    border: 2px solid rgb(160, 41, 154);
+    border-radius: 10px;
+    background-color: cadetblue;
+    font-weight: bold;
+    height: 40px;
+
+
+}
+h2{
+    text-align: center;
+    font-weight: bold;
+}
