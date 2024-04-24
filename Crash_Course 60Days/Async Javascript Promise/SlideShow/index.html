@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Show</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="main-container">
+        <div id="image-container">
+            <!-- <img class="firstImg" src="https://images.pexels.com/photos/381739/pexels-photo-381739.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="">
+            <img src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+            <img src="https://images.pexels.com/photos/757889/pexels-photo-757889.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="">
+            <img src="https://images.pexels.com/photos/45853/grey-crowned-crane-bird-crane-animal-45853.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt=""> -->
+        <h1>Slide Show Here</h1>
+        
+        
+        </div>
+
+       
+    </div>
+    <div id="btnDiv">
+        <button onclick="startBtn()">Start</button>
+        <button onclick="stopBtn()">Stop</button>
+        <button onclick="nextBtn()">Next</button>
+        <button onclick="prevBtn()">Previous</button>
+    </div>
+
+</body>
+<script>
+
+    let i=0;
+
+    
+
+    let imgArr=[
+    "https://images.pexels.com/photos/381739/pexels-photo-381739.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "https://images.pexels.com/photos/757889/pexels-photo-757889.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "https://images.pexels.com/photos/45853/grey-crowned-crane-bird-crane-animal-45853.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "https://images.pexels.com/photos/709552/pexels-photo-709552.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "https://images.pexels.com/photos/265987/pexels-photo-265987.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+
+
+
+
+    ]
+
+    function displayImg(index){
+        let mainCont=document.getElementById("main-container")
+        // let imageFirst=document.getElementsByClassName("firstImg")
+        mainCont.innerHTML=""
+        
+        let image=document.createElement("img")
+        image.src=imgArr[index]
+
+        // let h4=document.createElement("h4")
+        // h4.innerText=`Index:${i}`
+
+        mainCont.append(image)
+       
+        // console.log(image)
+    }
+
+    // displayImg()
+    let slideId=""
+
+    function startBtn(){
+       slideId=setInterval(()=>{
+            displayImg(i++)
+            if(i==imgArr.length){
+                i=0
+            }
+
+        }, 2000)
+        console.log("start")
+    }
+
+    function stopBtn(){
+       clearInterval(slideId)
+        
+        
+        
+    }
+
+    function nextBtn(){
+        displayImg(i++)
+        if(i==imgArr.length){
+            i=0
+        }
+}
+
+   function prevBtn(){
+    displayImg(--i)
+    if(i<=0){
+        i=imgArr.length
+    }
+   }
+
+
+</script>
+</html>

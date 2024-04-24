@@ -1,0 +1,55 @@
+#main-container{
+    width: 60%;
+    height: 400px;
+    display: flex;
+    border: 4px solid darkred;
+    margin: auto;
+    /* position: relative; */
+    background-color:lightcyan
+}
+
+#image-container{
+    display: flex;
+    /* border: 1px solid black; */
+    /* position: relative; */
+}
+
+
+img{
+    width: 100%;
+    height: 350px;
+    /* position: absolute; */
+    object-fit: cover;
+    padding-top: 25px;
+
+}
+
+#btnDiv{
+    margin: auto;
+    gap: 4px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+h1{
+    text-align: center;
+    font-size: 70px;
+    padding-left: 90px;
+}
+
+body{
+    background-color:lightpink
+    ;
+}
+
+button{
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: azure;    
+}
+h4{
+    color: red;
+    font-weight: bold;
+    font-size: 25px
+}
