@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+    <h2>Country App</h2>
+    <div id="inputContainer">
+        
+    <select name="Population" id="">
+        <option value="">Sort by population</option>
+        <option value="desc">desc</option>
+        <option value="asc">asc</option>
+    </select>
+     </div>
+
+    
+
+    <div id="mainContainer">
+        <h1>Country</h1>
+    </div>
+    
+</body>
+<script>
+    
+    
+    let mainCont=document.getElementById("mainContainer")
+
+    let sortSelect=document.querySelector("select")
+
+    function getData(URL){
+        fetch(URL)
+        .then(function (res){
+            return res.json()
+        })
+        .then(function(res){
+            // console.log(res)
+            showData(res)
+    
+        })
+
+    }
+
+    getData("https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-countries")
+
+    
+
+    function showData(arr){
+        let arrData=arr.data
+        // console.log(arrData)
+        mainCont.innerHTML=""
+        
+        arrData.forEach((ele, i)=>{
+
+        // console.log(ele)
+
+        let card=document.createElement("div")
+        card.id="container"
+
+        let country=document.createElement("h3")
+        country.innerText=`Country: ${ele.country}`      
+
+        // console.log(country)
+        let id=document.createElement("p")
+        id.innerText=`id:${ele.id}`
+
+        let rank=document.createElement("p")
+        rank.innerText=`Rank:${ele.Rank}`
+
+        // console.log(rank)
+
+        let population=document.createElement("h4")
+        population.innerText=`Population:${ele.population}`
+
+         card.append(id, country, rank, population)
+         mainCont.append(card)
+
+       })
+
+     
+}
+
+
+function handleSortPopulation(){
+
+    let value=sortSelect.value
+    console.log(value)
+
+    // if(value){
+    //     URL=
+    // }
+    // showData(arr)
+    (getData(`https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-countries?sort=population&order=${value}`
+))
+    
+    
+
+
+}
+
+
+
+sortSelect.addEventListener("change", function(){
+        handleSortPopulation()
+})
+
+
+
+
+
+
+
+
+
+
+   
+</script>
+</html>
