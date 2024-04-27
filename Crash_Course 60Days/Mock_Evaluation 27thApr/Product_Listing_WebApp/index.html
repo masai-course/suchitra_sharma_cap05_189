@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="navbar">
+        <h2>Products Listing Page</h2>
+        <select name="" id="select">
+            <option value="">Category</option>
+            <option value="electronics" id="electronics">electronics</option>
+            <option value="jewelery" id="jewelery">jewelery</option>
+            <option value="men's clothing" id="mensClothing">men's clothing</option>
+            <option value="women's clothing"id="womensClothing">women's clothing</option>
+        </select>
+
+        <input id="input" type="text" placeholder="search products">
+        <select name="" id="">
+            <option value="">Sorting by price</option>
+            <option value="asc">asc</option>
+            <option value="desc">desc</option>
+        </select>
+
+
+
+    </div>
+    <!-- [
+  "electronics",
+  "jewelery",
+  "men's clothing",
+  "women's clothing"
+] -->
+
+    <div id="mainContainer">
+
+    </div>
+    
+</body>
+<script>
+
+    let mainContainer=document.getElementById("mainContainer")
+    // let electronics=document.getElementById("electronics")
+    // let jewelery=document.getElementById("jewelery")
+    let input=document.querySelector("input")
+
+    let select=document.getElementById("select")
+
+   
+    let getData=(URL)=>{
+        fetch(URL)
+        .then((res)=>{
+            return res.json()
+
+        })
+        .then((res)=>{
+            console.log(res)
+            showData(res)
+        })
+
+    }
+
+    getData("https://fakestoreapi.com/products")
+
+    let showData=(arr)=>{
+        mainContainer.innerHTML=""
+    
+        console.log(arr)
+        arr.forEach((ele, i)=>{
+                
+            let productContainer=document.createElement("div")
+            productContainer.id="productCont" 
+            
+
+            let image=document.createElement("img")
+            image.src=ele.image
+
+            let title=document.createElement("h5")
+            title.innerHTML=ele.title
+
+            let price=document.createElement("h4")
+            price.innerHTML=`Price: ${ele.price}`
+            
+             productContainer.append(image, title, price)
+            mainContainer.append(productContainer)
+
+        })
+
+
+    }
+
+
+    function handleChangeCategory(){
+        let value=select.value
+
+
+        
+        getData(`https://fakestoreapi.com/products/category/${value}`)
+        // showData(value)
+   
+    }
+
+
+   function handlePriceSort(){
+        let value=select.value
+
+        console.log(value)
+
+        
+   }
+
+
+    select.addEventListener("change", ()=>{
+            handleChangeCategory()
+            handlePriceSort()
+    })
+
+    input.addEventListener("click", ()=>{
+        searchProduct()
+    })
+
+
+</script>
+</html>
