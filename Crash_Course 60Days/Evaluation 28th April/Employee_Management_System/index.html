@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h3>Employee Management System</h3>
+    <div id="headContainer">
+       
+    <!-- <p>Filter By Department:-</p> -->
+    <select name="" id="selectDepartment">
+        <!-- <p>Filter By Department :-</p> -->
+        
+        <option value="">--Select Department--</option>
+        <option value="hr">hr</option>
+        <option value="finance">finance</option>
+        <option value="marketing">marketing</option>
+        <option value="engineering">engineering</option>
+        <option value="operations">operations</option>
+    </select>
+    <select name="" id="selectGender">
+        <!-- <p>Filter By gender :-</p> -->
+        <option value="">Filter By Gender</option>
+        <option value="male">male</option>
+        <option value="female">female</option>
+    </select>
+    <select name="" id="selectSorting">
+        <option value="">sort By Salary</option>
+        <option value="asc">low to high</option>
+        <option value="desc">high to low</option>
+    </select>
+</div>
+    <div id="tableDiv">
+        <table id="tableContainer">
+            <tr>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Department</th>
+                <th>Salary</th>
+    
+            </tr>
+            <!-- <tr id="tableRow">
+                <td id="slNo"></td>
+                <td id="name"></td>
+                <td id="gender"></td>
+                <td id="department"></td>
+                <td id="salary"></td>
+    
+            </tr> -->
+        </table>
+
+    </div>
+    <div id="mainContainer">
+
+    </div>
+       
+      
+
+    </div>
+    <button onclick="previous()">Previous</button>
+    <button onclick="next()">Next</button>
+    
+</body>
+
+<script>
+
+    let mainContainer=document.getElementById("mainContainer")
+   let selectDepartment=document.getElementById("selectDepartment")
+   let selectGender=document.getElementById("selectGender")
+   let selectSorting=document.getElementById("selectSorting")
+
+   let page=1
+
+    let fetchData=(URL)=>{
+        fetch(URL)
+        .then((res)=>{
+            return res.json()
+        })
+        .then((res)=>{
+            // console.log(res)
+            showData(res)
+
+        })
+
+    }
+
+    fetchData('https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees')
+
+
+    let showData=(arr)=>{
+        // console.log(arr.data)
+        mainContainer.innerHTML=""
+
+        let arrData=arr.data
+        arrData.forEach((ele, i)=>{
+                // console.log(ele)
+
+                let container=document.createElement("div")
+                container.id="container"
+
+
+                let slNo=document.createElement("p")
+                slNo.innerHTML=ele.id
+
+                // slNo.append(slNo)
+
+                let name=document.createElement("h4")
+                name.innerHTML=ele.name
+
+                // name.append(name)
+
+                let gender=document.createElement("h4")
+                gender.innerHTML=ele.gender
+
+                // gender.append(gender)
+
+                let department=document.createElement("h4")
+                department.innerHTML=ele.department
+
+                // department.append(department)
+
+                let salary=document.createElement("h4")
+                salary.innerHTML=ele.salary
+
+                // salary.append(salary)
+
+                // tableRow.append(slNo, name, gender, department, salary)
+                // tableContainer.append(slNo, name, gender, department, salary)
+                // tableRowData.append(slNo, name, gender, department, salary)
+                // tRowCont.append(tableRowData)
+                // tableCont.append(tRowCont)
+                // container.append(tableRowData)
+                container.append(slNo, name, gender, department, salary)
+                // tableContainer.append(tableRow)
+                
+                mainContainer.append(container)
+                // mainContainer.append(slNo, name, gender, department, salary)
+
+
+
+
+        })
+    }
+
+
+    selectDepartment.addEventListener("change", function(URL){
+            let value=selectDepartment.value
+            console.log(value)
+    if(value){
+     fetchData(`https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees?page=1&limit=10&filterBy=department&filterValue=${value}`)
+
+             }
+                // showData(arr)
+})
+
+        selectGender.addEventListener("change", function(){
+            let value=selectGender.value
+            console.log(value)
+
+            fetchData(`https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees?page=1&limit=10&filterBy=gender&filterValue=${value}`)
+        })
+
+        selectSorting.addEventListener("change", function sort(){
+            let value=selectSorting.value
+            console.log(value)
+
+            fetchData(`https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees?page=1&limit=10&sort=salary&order=${value}`)
+            
+            // next()
+        })
+
+        //pagination function is not working in other functionalities
+        // let page=0
+        function previous(){
+            page--
+            console.log(page)
+            // showData(res)
+            fetchData(`https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees?${page--}`)
+            // fetchData(`https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees?${page--}&limit=10&sort=salary&order=${selectSorting.value}`)
+            
+
+            
+
+
+        }
+
+        function next(){
+            page++
+
+            // page++
+            console.log(page)
+            // showData(res)
+            fetchData(`https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees?${page++}`)
+            // fetchData(`https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees?${page++}&limit=10&sort=salary&order=${selectSorting.value}`)
+
+        }
+
+
+
+</script>
+</html>
