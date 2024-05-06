@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JSX and Babel</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      // Your JSX code here
+
+      let rootElement=document.getElementById("root")
+
+      let flag=false
+      let text=flag?<h4>Hii PAP Students</h4>: <h4>Hello CAP Students</h4>
+      
+      let para="Hi Everyone!!"
+      para="Masai School"
+    let header=
+    <div>
+            
+    <p>  {para}</p> 
+    <h4>{text}</h4>
+    
+   
+        </div>
+
+
+      ReactDOM.createRoot(rootElement).render(header)
+
+
+    </script>
+  </body>
+</html>
