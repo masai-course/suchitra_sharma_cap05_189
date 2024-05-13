@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+
+    <style>
+      #root{
+        width: 60%;
+        margin: auto;
+        /* border: 1px solid red; */
+        padding-left: 250px;
+      }
+
+      #Cont{
+
+       display: flex;
+       margin: auto;
+       gap: 4px;
+
+      }
+
+      #input_cont{
+        display: flex;
+        border-radius: 3px;
+
+
+      }
+
+      button{
+        border-radius: 4px;
+        background-color: bisque;
+        font-weight: bold;
+      }
+      h1{
+        text-align: center;
+        color: brown;
+        background-color: blanchedalmond;
+      }
+
+    </style>
+  </head>
+  
+  <body>
+    <h1>DYNAMIC INPUT FIELDS</h1>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Your  code will go here
+
+
+    function App(){
+
+
+      const [inputData, setInputData]=React.useState([{value:""}])
+      const [data, setData]=React.useState([])
+        
+      
+
+      function handleChange(e, i){
+        // console.log(inputData[0].value)
+        inputData[i].value=e.target.value
+        let arr=[...inputData]
+        arr[i].value=e.target.value
+        setInputData(arr)
+      }
+
+    function AddHobbiesBtn(){
+
+      setInputData([...inputData, {value:""}])
+        
+      }
+
+      function RemoveHobbiesBtn(){
+        setInputData()
+      }
+
+
+      function handleRemoveBtn(i){
+          let filteredData=inputData.filter((ele, index)=>{
+              return index!=i
+          })
+
+          setInputData(filteredData)
+      }
+      return (
+        <>
+          {inputData.map((ele, i)=>{
+
+            console.log(ele)
+               return(
+                <div key={i}  id="Cont">
+                  <input id="input_cont" type="text" value={ele.value} onChange={(e)=>handleChange(e, i)}/>
+                  <button onClick={AddHobbiesBtn}> Add Hobbies</button>
+                  <button onClick={()=>{
+                    handleRemoveBtn(i)
+                  }} disabled={inputData.length<=1}>Remove Hobbies</button>
+                  </div>
+               )
+          })          
+}
+        
+        
+        </>)
+
+
+
+    }
+
+
+
+    let rootElement=document.getElementById("root")
+    ReactDOM.createRoot(rootElement).render(<App/>)
+  </script>
+</html>
