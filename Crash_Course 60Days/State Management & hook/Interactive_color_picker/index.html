@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+    <style>
+      
+      #container{
+        width:60%;
+        margin: auto;
+        border: 3px solid black;
+        border-radius: 5px;
+        gap: 20px;
+      }
+
+      #Box{
+        width: 30%;
+        margin: auto;
+        height: 150px;
+        border: 3px solid red;
+        background-color:#FF5733 ;
+
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Your  code will go here
+
+    function ColorPick(){
+
+        const[inputColor, setInputColor]=React.useState('')
+        const [error, setError]=React.useState("")
+
+        function handleChange(e){
+
+          const colorValue=e.target.value
+
+          if(/^#?([0-9A-F]{6}|[0-9A-F]{3})$/i.test(colorValue)){
+            setInputColor(colorValue)
+          setError("")
+          }
+          else{
+            setError("error")
+          }
+       }
+
+        
+        console.log(inputColor)
+        return(
+            <div id="container">
+          
+            <label for="Color" > Input HEX Color : </label>
+              <input type="text" placeholder="type color code here" onChange={(e)=>handleChange(e)} value={inputColor} />
+             <br/>
+          <div id="Box"
+        style={{width:"200px", height:"200px" , backgroundColor:inputColor}}
+            >
+           
+          </div>
+            
+            </div>
+        )
+        // console.log("hii")
+    }
+
+
+    let rootElement=document.getElementById("root")
+    ReactDOM.createRoot(rootElement).render(<ColorPick/>)
+
+  </script>
+</html>
