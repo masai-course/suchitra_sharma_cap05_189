@@ -1,0 +1,60 @@
+{
+  "tickets": [
+    {
+      "id": 6,
+      "title": "Database Backup resolve",
+      "description": "Automatic database backups are fulfill",
+      "status": "completed",
+      "priority": 4,
+      "assignedUser": "John Doe"
+    },
+    {
+      "id": 7,
+      "title": "UI Bug in Dashboard",
+      "description": "UI elements are misaligned in the dashboard page",
+      "status": "pending",
+      "priority": 9,
+      "assignedUser": "Alice Johnson"
+    },
+    {
+      "id": 8,
+      "title": "Performance Optimization",
+      "description": "Request to optimize the performance of the application",
+      "status": "pending",
+      "priority": 7,
+      "assignedUser": "Jane Smith"
+    },
+    {
+      "id": 9,
+      "title": "Security Vulnerability",
+      "description": "A potential security vulnerability was detected",
+      "status": " progress",
+      "priority": 9,
+      "assignedUser": "Alice Johnson"
+    },
+    {
+      "id": 10,
+      "title": "Feature Request: Multi-Language Support",
+      "description": "Request to add multi-language support to the application",
+      "status": "pending",
+      "priority": 5,
+      "assignedUser": "John Doe"
+    },
+    {
+      "title": "navbar logo",
+      "description": "create navbar",
+      "assignee": "Alice Johnson",
+      "status": "pending",
+      "priority": "6",
+      "id": 11
+    },
+    {
+      "title": "Create SideNavbar ",
+      "description": "create a sidenavbar for homepage",
+      "assignee": "Alice Johnson",
+      "status": "pending",
+      "priority": "7",
+      "id": 12
+    }
+  ]
+}
