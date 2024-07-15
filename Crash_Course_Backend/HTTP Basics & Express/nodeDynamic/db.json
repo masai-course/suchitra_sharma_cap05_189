@@ -1,0 +1,45 @@
+{
+    "todos": [
+      {
+        "id": 1,
+        "task": "Complete wedding photo editing",
+        "status": true
+      },
+      {
+        "id": 2,
+        "task": "Schedule pre-wedding shoot with client",
+        "status": false
+      },
+      {
+        "id": 3,
+        "task": "Prepare invoice for corporate event",
+        "status": true
+      },
+      {
+        "id": 4,
+        "task": "Backup all recent footage",
+        "status": false
+      },
+      {
+        "id": 5,
+        "task": "Post latest wedding highlights on social media",
+        "status": true
+      },
+      {
+        "id": 6,
+        "task": "Update website portfolio",
+        "status": false
+      },
+      {
+        "id": 7,
+        "task": "Order new equipment for cinematography",
+        "status": true
+      },
+      {
+        "id": 8,
+        "task": "Respond to client emails",
+        "status": false
+      }
+    ]
+  }
+  
