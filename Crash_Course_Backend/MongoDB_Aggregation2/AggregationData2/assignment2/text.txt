@@ -1,0 +1,39 @@
+
+Write Mongo query to retrieve documents from the orders in ascending order by total.
+==> db.orders.aggregate([{$sort:{"total":1}}])
+
+Write Mongo query to retrieve the oldest paymentMethod from the payments collection as "_id".
+==>  db.payments.aggregate([{$sort:{"payment_date":1}},{$limit:1}, {$project:{"_id":"$paymentMethod", "payment_date":1}}])
+
+Write Mongo query to retrieve 2nd and 3rd buyers from the buyers collection.
+==>  db.buyers.aggregate([{$skip:1}, {$limit:2}])
+
+Write Mongo query to retrieve the most Expensive product from order_details.
+==>  db.order_details.aggregate([{$sort:{"price":-1}}, {$limit:1}])
+
+Write Mongo query to retrieve the first order from the orders as per the order_date.
+==> db.orders.aggregate([{$sort:{"order_date":1}}, {$limit:1}])
+
+Write Mongo query to retrieve the last 3 orders from the orders collection who have less total amount.
+==> db.orders.aggregate([{$sort:{"order_date":-1, "total":1}}, {$project:{"total":1, "order_date":1}},{$limit:3}])
+
+Write Mongo query to retrieve the most recent shipped order from the orders collection.
+==>  db.orders.aggregate([{$sort:{"ship_date":-1}}, {$limit:1}])
+
+Write Mongo query to get the total revenue from all orders
+==> db.orders.aggregate([{$group:{_id:null, totalSum:{$sum:"$total"}}}])
+
+Write Mongo query to retrieve all the orders that shipped before 2022-05-26
+==>  db.orders.aggregate([{$match:{"ship_date":{$lt:'2022-05-26'}}}, {$project:{"ship_date":1}}])
+
+Write Mongo query to find the maximum price as maxPrice of products and their names as name for each category.
+==> db.products.aggregate([{$sort:{"price":-1}}, {$project:{"maxPrice":"$price", "name":"$name"}}])
+
+Write Mongo query to find Most used payment Method as paymentMethod and the number of time it is used as count.
+==>  db.payments.aggregate([{$group:{_id:"$paymentMethod", "count":{$count:{}}}}, {$sort:{"count":-1}},{$limit:1}])
+
+Write Mongo query to find the total count of orders by status.
+==> db.orders.aggregate([{$group:{_id:"$status", "count":{$count:{}}}}, {$group:{_id:null, totalCount:{$sum:"$count"}}}])
+
+Write Mongo query to retrieve the orders grouped by customer_id with the max total
+==> db.orders.aggregate([{$sort:{"total":-1}},{$project:{"maxTotal":"$total"}}, {$limit:1}])
