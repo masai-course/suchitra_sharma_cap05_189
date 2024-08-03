@@ -1,0 +1,5 @@
+
+ The request mathod is GET, url is /, status is 
+    [object Object], time is Sat Aug 03 2024 21:50:19 GMT+0530 (India Standard Time) 
+ The request mathod is POST, url is /add-user, status is 
+    [object Object], time is Sat Aug 03 2024 21:52:41 GMT+0530 (India Standard Time) 
