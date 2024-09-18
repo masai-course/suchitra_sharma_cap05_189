@@ -1,0 +1,27 @@
+.imageDiv{
+
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid black; */
+    gap: 20px;
+}
+.image{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.amountDiv{
+    justify-content: center;
+    /* border: 1px solid red; */
+    text-align: center;
+    font-weight: bold;
+    background-color: green;
+    border-radius: 2px;
+}
+.downDiv{
+    justify-content: center;
+    /* border: 1px solid red; */
+    text-align: center;
+    font-weight: bold;
+    background-color: green;
+    border-radius: 2px;
+
+}

@@ -1,0 +1,77 @@
+#para{
+    font-size: 20px;
+}
+.footerDiv{
+    /* border: 1px solid black; */
+    margin-block-start: 30px;
+    background-color: azure;
+
+}
+.footerFirstSec{
+    /* border: 1px solid red; */
+    gap: 20px;
+}
+.inputGrp{
+    border: 1px solid gray;
+    border-radius: 4px;
+}
+#socialIcons{
+    width: 30px;
+}
+#h5{
+    font-size: 25px;
+    /* scroll-margin-block-start: 20px; */
+    margin-left: 20px;
+    
+}
+#hstack{
+    gap: 30px;
+}
+.heading{
+    font-size: 25px;
+    background-color: whitesmoke;
+    color: black;
+}
+.img{
+    width: 50px;
+}
+.footerSecDiv{
+    /* border: 1px solid green; */
+    width: 250px;
+    height: 150px;
+    text-align: center;
+    margin-block-start: 10px;
+}
+.H4{
+    font-size: 20px;
+}
+.H2{
+    text-align: left;
+    
+}
+#footersecContainer{
+    /* border: 2px solid yellow; */
+    display: flex;
+    gap: 60px;
+    justify-content: space-around;
+  
+    margin-block-start: 20px;
+
+    
+}
+/* .footerSecCont{
+border: 1px solid blue;
+} */
+.footerSecCont>p{
+    font-size: 20px;
+}
+#footerLastCont{
+    display: flex;
+    justify-content: space-around;
+}
+.iconImg{
+    width: 30px;
+}
+.lastP{
+    text-align: center;
+}
