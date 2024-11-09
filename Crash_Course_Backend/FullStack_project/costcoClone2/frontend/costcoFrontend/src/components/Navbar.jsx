@@ -10,8 +10,20 @@ import {
 } from '@chakra-ui/react'
 import { HamburgerIcon, ChevronRightIcon } from '@chakra-ui/icons'
 import './navbar.css'
+import Grocery from './AllLinks/NavbarLink/Grocery'
+import SameDay from './AllLinks/NavbarLink/SameDay'
+import Shop from './AllLinks/NavbarLink/Shop'
+import { Navigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
 
 export default function Navbar() {
+    const navigate=useNavigate()
+    // const [showGrocery, setShowGrocery]=useState(false)
+    const handleGrocery=()=>{
+        // setShowGrocery(true)
+        navigate("/grocery")
+    }
     return (
         <>
 
@@ -26,9 +38,9 @@ export default function Navbar() {
                         maxW={"30px"}
 
                     />
-                    Shop
+                    {/* Shop */}
 
-
+                    <Shop/>
 
                     <MenuList >
                         <MenuItem  >
@@ -61,8 +73,13 @@ export default function Navbar() {
                     </MenuList>
                 </Menu>
                 <HStack spacing={"30px"}>
-                    <Link color={"white"} fontWeight={"bold"} fontSize={"18px"}>Grocery</Link>
-                    <Link color={"white"} fontWeight={"bold"} fontSize={"18px"}>Same Day</Link>
+                    {/* <Link color={"white"} fontWeight={"bold"} fontSize={"18px"}>Grocery</Link> */}
+                    <button onClick={handleGrocery}>Grocery</button>
+                    {/* {showGrocery ? <Grocery/> : <button>Grocery</button>} */}
+                    {/* <Grocery/> */}
+                    <SameDay/>
+
+                    {/* <Link color={"white"} fontWeight={"bold"} fontSize={"18px"}>Same Day</Link> */}
                     <Link color={"white"} fontWeight={"bold"} fontSize={"18px"}>Deals</Link>
                     <Link color={"white"} fontWeight={"bold"} fontSize={"18px"}>Business Delivery</Link>
                     <Link color={"white"} fontWeight={"bold"} fontSize={"18px"}>Optical</Link>
@@ -76,30 +93,7 @@ export default function Navbar() {
                 </HStack>
             </HStack>
             <div id='divP'>
-            <HStack>
-                <VStack marginBlockStart={"0px"}>
-                    <div>
-                        <p >My Warehouse</p>
-                        <p> Seattle</p>
-                        <p>Closed: Open 9.30 AM Saturday</p>
 
-                    </div>
-
-
-                </VStack>
-                <VStack>
-                   <p>Delivery Location</p> 
-                    <p>98101</p>
-                </VStack>
-                <HStack marginLeft={"800px"}>
-                <Link>Lists |</Link>
-                <Link>Buy Again</Link>
-
-                </HStack>
-                
-
-
-                </HStack>
                 
             </div>
                

@@ -1,44 +1,36 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 import { Input } from "@chakra-ui/react"
 import axios from 'axios'
+import Login from "./Login"
+import { AuthContext } from "../context/AuthContextProvider"
+import { useNavigate } from "react-router-dom"
 
-export default function Signin(){
+export default function Signin(){                   // change the component Signin to Signup 
 
-        const[name, setName]=useState("")
-        const[email, setEmail]=useState("")
-        const[password, setPassword]=useState("")
-        const[confirmPassword, setConfirmPassword]=useState("")
-        const[role, setRole]=useState("")
+    const[username, setUsername]=useState("")
+    const[password, setPassword]=useState("")
+    const {signup}=useContext(AuthContext)
+    const navigate=useNavigate()
 
-        const handleSignIn=async ()=>{
-                try {
-                    await axios.post('https://devnotes-bb11.onrender.com/user/register', {
-                       name, email, password, confirmPassword, role
-                    },
-                {
-                    headers:{
-                        'Content-Type':'application/json'
-                    }
-                })
-                } catch (error) {
-                    alert(`error during sign in ${error}`)
-                    
-                }
-        }
-
-
-
-
-    return(
-        <>
-        <Input type="text" placeholder="Type Your Name" value={name} onChange={(e)=>setName(e.target.value)}/>
-        <Input type="email" placeholder="Type Your Email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
-        <Input type="text" placeholder="Type Password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
-        <Input type="password" placeholder="Type Confirm Password" value={confirmPassword} onChange={(e)=>setConfirmPassword(e.target.value)}/>
-        <Input type="text" placeholder="Type Your Role" value={role} onChange={(e)=>setRole(e.target.value)}/>
-       
-       <button onClick={handleSignIn}>Submit</button>
+    const handleSubmit=(e)=>{
+        e.preventDefault()
+        signup(username, password)      //call signup function from context api
+        navigate("/login")
+    }
         
-        </>
+    
+ return(
+        <form onSubmit={handleSubmit}>
+        <h2>Sign up</h2>
+        <div>
+        <label>Username :</label>
+        <Input type="text" placeholder="Type Your Name" value={username} onChange={(e)=>setUsername(e.target.value)}/>
+       <label>Password :</label>
+        <Input type="text" placeholder="Type Password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
+
+
+        </div>
+        <button type="submit">Register</button>
+         </form>
     )
 }
