@@ -8,7 +8,7 @@ export default function SliderSponsorProduct(){
 
         useEffect(()=>{
 
-            axios.get('http://localhost:3000/sponsor/get-products')
+            axios.get('https://costco-dbjson.vercel.app/sponsorProducts')
             .then((res)=>{
                 setSponsorProduct(res.data)
                 console.log(setSponsorProduct)

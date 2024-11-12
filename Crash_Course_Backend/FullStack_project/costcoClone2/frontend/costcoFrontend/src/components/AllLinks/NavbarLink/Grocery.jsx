@@ -21,7 +21,7 @@ export default function Grocery() {
 
     const fetchFrontProducts = async () => {
         try {
-            const response = await axios.get("http://localhost:3000/FrontProducts")
+            const response = await axios.get("https://costco-dbjson.vercel.app/FrontProducts")
             setShowProducts(response.data)
 
         } catch (error) {
@@ -33,7 +33,7 @@ export default function Grocery() {
 
     const fetchSlideData = async () => {
         try {
-            const response = await axios.get("http://localhost:3000/GrocerySliderProduct")
+            const response = await axios.get("https://costco-dbjson.vercel.app/GrocerySliderProduct")
             setData(response.data)
         } catch (error) {
             console.log(`There is something error in fetching slides ${error}`)
@@ -42,7 +42,7 @@ export default function Grocery() {
 
     const fetchSliderProducts=async()=>{
         try {
-            const response=await axios.get("http://localhost:3000/GrocerySponsorProducts")
+            const response=await axios.get("https://costco-dbjson.vercel.app/GrocerySponsorProducts")
             setShowSliderProducts(response.data)
         } catch (error) {
             console.log(`There is something error ${error}`)

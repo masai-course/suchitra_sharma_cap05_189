@@ -5,19 +5,22 @@ import axios from "axios"
 
 
 export const AuthContext = createContext()        // create context
-export default function AuthContextProvider({ children }) {
+export default function AuthContextProvider({children}) {
 
     const [user, setUser] = useState(null)
     const [registeredUser, setRegisteredUser] = useState([])
     // const navigate=useNavigate()
 
-    const login = async(username, password) => {
+    const login = async(email, password) => {
      try {
-            const response=await axios.get(`http://localhost:3000/user?username=${username}`)
-            if(response.data.length>0){
+            const response=await axios.get(`http://localhost:3000/user?username={username}`)
+            if(response.data.length>0 && response.data[0].password==password){
                 setUser({username})
                 alert('Login successfull')
-                
+
+                // if(response.data.email=="" || response.data.password=="" ){
+                //     alert("please fill the information")
+                // }
             }
             else{
                 alert('Invalid username or password')
@@ -25,27 +28,28 @@ export default function AuthContextProvider({ children }) {
      } catch (error) {
         console.error(`Error while loggin in:${error}`)
      }
-        
-
     }
 
-    const signup = async(username, password) => {
+    const signup = async(email, password, confirmPassword) => {
+        if(password!=confirmPassword){
+            alert("Password is not matching")
+        }
         try {
-            const response=await axios.get(`http://localhost:3000/user?username=${username}`)
+            const response=await axios.get(`https://costco-dbjson.vercel.app/user?username=${username}`)
             if(response.data.length>0){
                 alert('User already exist')
                 return
             }
        
-            const newUser={username, password}
-            await axios.post('http://localhost:3000/user', newUser)
+            const newUser={email, password}
+            await axios.post('https://costco-dbjson.vercel.app/user', newUser)
             alert('User registered successfull')
-            // setUser("")
+            setUser(newUser)
         } catch (error) {
             console.log('Error registering error')
         }
-        
-    }
+    }    
+    
 
     const logout = () => {
         setUser(null)

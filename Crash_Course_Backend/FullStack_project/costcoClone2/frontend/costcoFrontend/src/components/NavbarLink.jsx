@@ -6,7 +6,7 @@ const listOfLink = [
         displayText: ""
     },
     {
-        to: "/signin",
+        to: "/signup",
         // displayText: "Account"
     },
     {

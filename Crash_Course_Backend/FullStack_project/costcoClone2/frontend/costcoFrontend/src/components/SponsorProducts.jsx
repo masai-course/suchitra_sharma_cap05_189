@@ -11,7 +11,7 @@ export default function SponsorProducts() {
 
     const fetchSponsorProducts = async () => {
         try {
-            const response = await axios.get('http://localhost:3000/sponsorProducts')
+            const response = await axios.get('https://costco-dbjson.vercel.app/sponsorProducts')
             setPost(response.data)
 
         } catch (error) {

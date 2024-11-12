@@ -1,5 +1,5 @@
 import { Routes, Route, Link} from "react-router-dom"
-import Signin from "../page/Signin"
+import Signup from "../page/Signup"
 import Login from "../page/Login"
 import Home from "./Home"
 import CostcoNext from "./AllLinks/HeaderLink/CostcoNext"
@@ -20,7 +20,7 @@ export default function AllRoutes(){
         {/* <Link></Link> */}
                 <Routes>
                     <Route path='/' element={<Home/>}/>
-                    <Route path='/signin' element={<Signin/>}/>
+                    <Route path='/signup' element={<Signup/>}/>
                     <Route path='/login' element={<Login/>}/>
                     <Route path='/costcoNext' element={<CostcoNext/>}/>
                     <Route path='/whatsNew' element={<WhatsNew/>}/>

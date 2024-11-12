@@ -27,7 +27,7 @@ export default function Home() {
             <Advertisement />
             <Slider />
             <Productsbar />
-            <SliderSponsorProduct />
+            {/* <SliderSponsorProduct /> */}
             <SponsorProducts/>
             <Paragraph />
             <Footer />
