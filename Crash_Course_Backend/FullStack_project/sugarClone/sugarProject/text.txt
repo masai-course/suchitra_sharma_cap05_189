@@ -1,0 +1,5 @@
+
+sugar logo---> https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fimages.sugarcosmetics.com%2FLogo%2Fe4e638f6-67fa-43eb-9623-0a2dea7a09cc.gif&w=256&q=100
+https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fimages.sugarcosmetics.com%2FLogo%2Fe4e638f6-67fa-43eb-9623-0a2dea7a09cc.gif&w=256&q=100
+
+loginIcon--> https://png.pngtree.com/png-vector/20191110/ourmid/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg

@@ -1,0 +1,22 @@
+
+.image{
+    border-radius: 20px;
+    width: 280px;
+    height: 100px;
+}
+.icon{
+    border-radius: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.link{
+    /* background-color: white; */
+    padding:"50px";
+     /* background-color:'white'; */
+       color:white;
+       font-size: 25px;
+       font-weight: bold;
+
+    
+}
